@@ -502,6 +502,18 @@
 			)
 		);
 
+		$wp_customize->add_setting('frontpage_testimonials_background', array(
+		  'default'   => '',
+		  'type'      => 'theme_mod'
+		));
+
+		$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'frontpage_testimonials_background', array(
+		  'label'   => __('Testimonial background image', 'blendportfolio'),
+		  'section' => 'frontpage_testimonials',
+		  'settings' => 'frontpage_testimonials_background',
+		  'priority'  => 11
+		)));
+
 		$wp_customize->add_setting('frontpage_testimonials_image1', array(
 		  'default'   => get_bloginfo('template_directory').'/images/testimonial_person2.jpg',
 		  'type'      => 'theme_mod'

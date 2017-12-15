@@ -66,8 +66,12 @@
 				$testimonials_toggle = get_theme_mod( 'frontpage_testimonials_toggle' );
 
 				if ( isset( $testimonials_toggle ) && ($testimonials_toggle == 1) ) {
+					$testimonialStyle = '';
+					$testimonialBackground = get_theme_mod('frontpage_testimonials_background');
+					if ($testimonialBackground !== '')
+						$testimonialStyle = "style=\"background-image: url(".get_theme_mod('frontpage_testimonials_background')."); background-size: 100% 100%;\"";
 					
-					$output = "<div class=\"fh5co-testimonial\" >";
+					$output = "<div class=\"fh5co-testimonial\" ". $testimonialStyle .">";
 					$output .= "<div class=\"fh5co-narrow-content\">";
 					$output .= "<div class=\"owl-carousel-fullwidth animate-box\" data-animate-effect=\"fadeInLeft\">";
 					
